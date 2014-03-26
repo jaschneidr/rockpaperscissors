@@ -1,0 +1,9 @@
+<div class="center hero-unit">
+	<h1>Welcome to Rock Paper Scissors</h1>
+	<%= form_tag "/throw" do %>
+		<% throws = Hash.new %>
+		<% throws[:sign] = { rock: "Rock", paper: "Paper", scissors: "Scissors" } %>
+		<%= label('Throw', 'Your Throw') %>
+		<%= select(:sign, throws[:sign], throws[:sign].values)  %>
+		<%= submit_tag("Throw") %>
+	<% end %>
