@@ -8,6 +8,10 @@ gem 'sqlite3'
 
 group :development, :test do
 	gem 'rspec-rails'
+	gem 'guard-rspec'
+	gem 'spork-rails'
+	gem 'guard-spork'
+	gem 'childprocess'
 end
 
 group :test do
@@ -17,7 +21,6 @@ end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -26,5 +29,10 @@ gem 'turbolinks'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
 end
 

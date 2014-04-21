@@ -1,20 +1,27 @@
-// Typography
-
-
-h1, h2, h3, h4, h5, h6 {
-	line-height: 1;
+body
+{
+	background-color: #232323;
 }
 
-h1 {
+// Typography
+
+h1, h2, h3, h4, h5, h6
+{
+	line-height: 1;
+} 
+	    
+h1
+{
 	font-size: 3em;
 	letter-spacing: -2px;
 	margin-bottom: 30px;
 	text-align: center;
 	color: #999;
 	background-color: #000;
-}
-
-h2 {
+} 
+							  
+h2
+{
 	font-size: 1.2em;
 	letter-spacing: -1px;
 	margin-bottom: 30px;
@@ -23,15 +30,34 @@ h2 {
 	color: #9b0000;
 }
 
-p {
+p
+{
 	font-size: 1.1em;
 	line-height: 1.7em;
+	text-align: center;
 }
 
+a
+{
+	color: #9b0000;
+	&:hover
+	{
+		color: white;
+	}
+}
+
+a:visited
+{
+	color: #9b9b9b;
+	&:hover
+	{
+		color: white;
+	}
+}
 // Specific to game form
 
-.game_form {
-	background-color: #353535;
+.game_form
+{
 	text-align: center;
 	color: #999;
 }

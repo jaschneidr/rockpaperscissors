@@ -3,38 +3,35 @@ class ThrowsController < ApplicationController
   def home
   end
 
-  def new
+  def result
   end
 
   def throw
   	params.require(:sign)
-	signs = { rock: "rock", paper: "paper", scissors: "scissors" }
-	# store the values of signs in an array
-	server_throw_result = signs.values
+	#store the value of signs in an array
+	signs = ["Rock", "Paper", "Scissors"]
 	# assign a value to the server_sign variable randomly using rand from our new array
-	server_sign =  server_throw_result[rand(signs.length)]
+	server_sign = rand(signs.length).to_i
+	# assign the index value of the user's throw
+	user_throw = signs.index(params[:sign]).to_i
 
-	# through a series of if else statements, implement the rules of rock/paper/scissors and return the proper result
-	if :sign == server_sign
-		# you tied
-	elsif (:sign == signs[:rock])
-		if server_sign == signs.scissors
-			#You win!
-		else
-			#you lose!
-		end
-	elsif (:sign == signs[:paper])
-		if server_sign == signs.rock
-			#You win!
-		else
-			#You lose!
-		end
+
+	#Compare the indices of the throws.
+	if (user_throw == server_sign)
+		#You tied
+		render "app/views/layouts/_tie.html.erb"
+	elsif ((user_throw == 0) && (server_sign == 2))
+		#You win!
+		render "app/views/layouts/_win.html.erb"
+	elsif ((user_throw == 2) && (server_sign == 0))
+	       #You lose!
+	       render "app/views/layouts/_lose.html.erb"
+	elsif (user_throw > server_sign)
+		#You win!
+		render "app/views/layouts/_win.html.erb"
 	else
-		if server_sign == signs[:paper]
-			#you win!
-		else
-			#you lose!
-		end
+		#You lose!
+		render "app/views/layouts/_lose.html"
 	end
 		
   end
