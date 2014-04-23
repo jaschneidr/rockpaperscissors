@@ -1,0 +1,5 @@
+This Ruby on Rails application is a simple game of Rock, Paper, Scissors.
+
+Most of the action takes place in the Throws controller.
+
+This application is meant to demonstrate ability to solve a problem using Ruby on Rails.
